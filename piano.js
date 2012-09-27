@@ -90,7 +90,7 @@
     }, 0);
   };
 
-  /* Manually diminish the volume when the key is not sustainted. */
+  /* Manually diminish the volume when the key is not sustained. */
   function fade(key) {
     var audio = sound(key);
     var stepfade = function() {
