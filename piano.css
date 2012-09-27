@@ -30,19 +30,14 @@ audio {
   width: 550px;
 }
 
-.piano-text, .piano-container, .piano-javascript {
+.piano-container, .piano-javascript {
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
 }
 
-.piano-text {
-  border: 3px solid #dca;
-}
-
 .piano-container {
   text-align: center;
-  background-color: #dca;
 }
 
 .piano-keys{
@@ -52,13 +47,11 @@ audio {
 }
 
 .piano-pedal {
-  border-radius: 5px;
   margin: 10px;
   color: rgba(0, 0, 0, 0.1);
 }
 
 .piano-sustain {
-  background-color: rgba(1, 1, 1, 0.2);
   color: black;
 }
 
