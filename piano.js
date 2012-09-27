@@ -43,9 +43,11 @@
   function pianoClass(name) {
     return '.piano-' + name;
   };
+  
   function soundId(id) {
     return 'sound-' + id;
   };
+  
   function sound(id) {
     var it = document.getElementById(soundId(id));
     return it;
@@ -61,9 +63,11 @@
       return keys[k];
     }
   };
+  
   function keydown(code) {
     return keyup(code);
   };
+  
   function press(key) {
     var audio = sound(key);
     if (depressed[key]) {
@@ -172,6 +176,7 @@
     }
     press(keydown(event.which));
   });
+  
   $(document).keyup(function(event) {
     if (event.which === pedal) {
       sustaining = false;
