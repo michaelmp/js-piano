@@ -35,20 +35,15 @@
      81,   50,    87,   69,   52,    82,   53,    84,   89,   55,    85,   56,
      73,   57,    79,   80
   ];
-
-  /* Key state. */
+  
+  var pedal = 32; /* Keycode for sustain pedal. */
+  var tonic = 'A2'; /* Lowest pitch. */
+  
+  /* Piano state. */
   
   var intervals = {};
   var depressed = {};
   
-  /* Keycode for sustain pedal. */
-  
-  var pedal = 32;
-  
-  /* Lowest pitch. */
-  
-  var tonic = 'A2';
-
   /* Selectors */
   
   function pianoClass(name) {
