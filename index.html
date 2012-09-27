@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="piano.css"/>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui-1.8.20.custom.min.js"></script>
+    <title>28-key Steinway</title>
+  </head>
+  <body>
+    <audio id="sound-A2" src="http://mikemp.mit.edu/piano/A2.ogg" preload="auto"></audio>
+    <audio id="sound-Bb2" src="http://mikemp.mit.edu/piano/Bb2.ogg" preload="auto"></audio>
+    <audio id="sound-B2" src="http://mikemp.mit.edu/piano/B2.ogg" preload="auto"></audio>
+    <audio id="sound-Ab3" src="http://mikemp.mit.edu/piano/Ab3.ogg" preload="auto"></audio>
+    <audio id="sound-A3" src="http://mikemp.mit.edu/piano/A3.ogg" preload="auto"></audio>
+    <audio id="sound-Bb3" src="http://mikemp.mit.edu/piano/Bb3.ogg" preload="auto"></audio>
+    <audio id="sound-B3" src="http://mikemp.mit.edu/piano/B3.ogg" preload="auto"></audio>
+    <audio id="sound-C3" src="http://mikemp.mit.edu/piano/C3.ogg" preload="auto"></audio>
+    <audio id="sound-Db3" src="http://mikemp.mit.edu/piano/Db3.ogg" preload="auto"></audio>
+    <audio id="sound-D3" src="http://mikemp.mit.edu/piano/D3.ogg" preload="auto"></audio>
+    <audio id="sound-Eb3" src="http://mikemp.mit.edu/piano/Eb3.ogg" preload="auto"></audio>
+    <audio id="sound-E3" src="http://mikemp.mit.edu/piano/E3.ogg" preload="auto"></audio>
+    <audio id="sound-F3" src="http://mikemp.mit.edu/piano/F3.ogg" preload="auto"></audio>
+    <audio id="sound-Gb3" src="http://mikemp.mit.edu/piano/Gb3.ogg" preload="auto"></audio>
+    <audio id="sound-G3" src="http://mikemp.mit.edu/piano/G3.ogg" preload="auto"></audio>
+    <audio id="sound-Ab4" src="http://mikemp.mit.edu/piano/Ab4.ogg" preload="auto"></audio>
+    <audio id="sound-A4" src="http://mikemp.mit.edu/piano/A4.ogg" preload="auto"></audio>
+    <audio id="sound-Bb4" src="http://mikemp.mit.edu/piano/Bb4.ogg" preload="auto"></audio>
+    <audio id="sound-B4" src="http://mikemp.mit.edu/piano/B4.ogg" preload="auto"></audio>
+    <audio id="sound-C4" src="http://mikemp.mit.edu/piano/C4.ogg" preload="auto"></audio>
+    <audio id="sound-Db4" src="http://mikemp.mit.edu/piano/Db4.ogg" preload="auto"></audio>
+    <audio id="sound-D4" src="http://mikemp.mit.edu/piano/D4.ogg" preload="auto"></audio>
+    <audio id="sound-Eb4" src="http://mikemp.mit.edu/piano/Eb4.ogg" preload="auto"></audio>
+    <audio id="sound-E4" src="http://mikemp.mit.edu/piano/E4.ogg" preload="auto"></audio>
+    <audio id="sound-F4" src="http://mikemp.mit.edu/piano/F4.ogg" preload="auto"></audio>
+    <audio id="sound-Gb4" src="http://mikemp.mit.edu/piano/Gb4.ogg" preload="auto"></audio>
+    <audio id="sound-G4" src="http://mikemp.mit.edu/piano/G4.ogg" preload="auto"></audio>
+    <audio id="sound-C5" src="http://mikemp.mit.edu/piano/C5.ogg" preload="auto"></audio>
+    <div class="piano">
+      <noscript class="piano-javascript">This program requires Javascript and HTML5 Audio support.</noscript>
+      <div class="piano-container">
+        <div class="piano-keys">
+          <div class="piano-white piano-A2"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Bb2"></div></div>
+          <div class="piano-white piano-B2"></div>
+          <div class="piano-white piano-C3"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Db3"></div></div>
+          <div class="piano-white piano-D3"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Eb3"></div></div>
+          <div class="piano-white piano-E3"></div>
+          <div class="piano-white piano-F3"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Gb3"></div></div>
+          <div class="piano-white piano-G3"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Ab3"></div></div>
+          <div class="piano-white piano-A3"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Bb3"></div></div>
+          <div class="piano-white piano-B3"></div>
+          <div class="piano-white piano-C4"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Db4"></div></div>
+          <div class="piano-white piano-D4"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Eb4"></div></div>
+          <div class="piano-white piano-E4"></div>
+          <div class="piano-white piano-F4"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Gb4"></div></div>
+          <div class="piano-white piano-G4"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Ab4"></div></div>
+          <div class="piano-white piano-A4"></div>
+          <div class="piano-black"><div class="piano-black-raised piano-Bb4"></div></div>
+          <div class="piano-white piano-B4"></div>
+          <div class="piano-white piano-C5"></div>
+        </div>
+        <div class="piano-petal">Just listen to that sustain!</div>
+      </div>
+      <div class="piano-text">
+        <p>Instructions:
+        <ul>
+          <li>Click and hold piano keys to play.</li>
+          <li>Press and hold keyboard keys to play.</li>
+          <li>Press spacebar for sustain petal.</li>
+        </ul>
+        </p>
+        <p>Steinway samples are from the <a href="http://theremin.music.uiowa.edu/MISpiano.html">University of Iowa</a></p>
+        <p>Issues:
+        <ul>
+          <li>The samples are 15MB total. Each is playable once it is downloaded.</li>
+          <li>If a key is "stuck" just click it again. If that doesn't work, it's a bug (let me know).</li>
+          <li>If your browser refuses to play ogg files, get a <a href="http://mozilla.org">better</a> browser.</li>
+          <li>The number of simultaneous keys you can play is limited by your computer keyboard and potentially your operating system.</li>
+          <li>If you hear choppy sounds when pressing a single key, it is probably a bug in your audio mixer.</li>
+          <li>If you hear choppy sounds when pressing many keys simultaneously, it is probably a limit in your audio mixer, maybe a browser quirk, but I ain't fixin' it.</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+    <script src="piano.js"></script>
+    <p style="text-align:center;font-size:smaller;">&copy; 2012 mmp</p>
+    <p style="text-align:center;font-size:smaller;">This is <a href="http://www.gnu.org/licenses/gpl.html">free</a> software. Have a lot of fun!</p>
+    <p style="text-align:center"><a href="http://playogg.org"><img title="I support PlayOgg!" src="http://static.fsf.org/playogg/Play_ogg_80x15.png" alt="PlayOgg"/></a></p>
+  </body>
+</html>
