@@ -14,7 +14,7 @@ Known Issues:
 
 * Key rollover. Basic USB keyboards have a physical limit of keys you can simultaneously play.
 * Most audio mixers act strangely when many sounds are played simultaneously (around 10).
-* Rarely, some audio mixers (e.g. Pulse Audio) will have difficulty playing HTML5 audio.
+* Some audio mixers (e.g. Pulse Audio) are known to have bugs concerning HTML5 audio.
 
 Ogg-format audio samples are known to work in Firefox and Chrome.
 
