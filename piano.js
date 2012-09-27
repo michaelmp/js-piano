@@ -36,9 +36,17 @@
      73,   57,    79,   80
   ];
 
+  /* Key state. */
+  
   var intervals = {};
   var depressed = {};
+  
+  /* Keycode for sustain pedal. */
+  
   var pedal = 32;
+  
+  /* Lowest pitch. */
+  
   var tonic = 'A2';
 
   /* Selectors */
