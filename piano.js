@@ -51,7 +51,6 @@
     return it;
   };
 
-
   /* Virtual piano keyboard events. */
   
   function keyup(code) {
