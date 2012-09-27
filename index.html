@@ -3,39 +3,39 @@
   <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="piano.css"/>
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="jquery-ui-1.8.20.custom.min.js"></script>
+    <script src="vendor/jquery-1.7.2.min.js"></script>
+    <script src="vendor/jquery-ui-1.8.20.custom.min.js"></script>
     <title>28-key Steinway</title>
   </head>
   <body>
-    <audio id="sound-A2" src="http://mikemp.mit.edu/piano/A2.ogg" preload="auto"></audio>
-    <audio id="sound-Bb2" src="http://mikemp.mit.edu/piano/Bb2.ogg" preload="auto"></audio>
-    <audio id="sound-B2" src="http://mikemp.mit.edu/piano/B2.ogg" preload="auto"></audio>
-    <audio id="sound-Ab3" src="http://mikemp.mit.edu/piano/Ab3.ogg" preload="auto"></audio>
-    <audio id="sound-A3" src="http://mikemp.mit.edu/piano/A3.ogg" preload="auto"></audio>
-    <audio id="sound-Bb3" src="http://mikemp.mit.edu/piano/Bb3.ogg" preload="auto"></audio>
-    <audio id="sound-B3" src="http://mikemp.mit.edu/piano/B3.ogg" preload="auto"></audio>
-    <audio id="sound-C3" src="http://mikemp.mit.edu/piano/C3.ogg" preload="auto"></audio>
-    <audio id="sound-Db3" src="http://mikemp.mit.edu/piano/Db3.ogg" preload="auto"></audio>
-    <audio id="sound-D3" src="http://mikemp.mit.edu/piano/D3.ogg" preload="auto"></audio>
-    <audio id="sound-Eb3" src="http://mikemp.mit.edu/piano/Eb3.ogg" preload="auto"></audio>
-    <audio id="sound-E3" src="http://mikemp.mit.edu/piano/E3.ogg" preload="auto"></audio>
-    <audio id="sound-F3" src="http://mikemp.mit.edu/piano/F3.ogg" preload="auto"></audio>
-    <audio id="sound-Gb3" src="http://mikemp.mit.edu/piano/Gb3.ogg" preload="auto"></audio>
-    <audio id="sound-G3" src="http://mikemp.mit.edu/piano/G3.ogg" preload="auto"></audio>
-    <audio id="sound-Ab4" src="http://mikemp.mit.edu/piano/Ab4.ogg" preload="auto"></audio>
-    <audio id="sound-A4" src="http://mikemp.mit.edu/piano/A4.ogg" preload="auto"></audio>
-    <audio id="sound-Bb4" src="http://mikemp.mit.edu/piano/Bb4.ogg" preload="auto"></audio>
-    <audio id="sound-B4" src="http://mikemp.mit.edu/piano/B4.ogg" preload="auto"></audio>
-    <audio id="sound-C4" src="http://mikemp.mit.edu/piano/C4.ogg" preload="auto"></audio>
-    <audio id="sound-Db4" src="http://mikemp.mit.edu/piano/Db4.ogg" preload="auto"></audio>
-    <audio id="sound-D4" src="http://mikemp.mit.edu/piano/D4.ogg" preload="auto"></audio>
-    <audio id="sound-Eb4" src="http://mikemp.mit.edu/piano/Eb4.ogg" preload="auto"></audio>
-    <audio id="sound-E4" src="http://mikemp.mit.edu/piano/E4.ogg" preload="auto"></audio>
-    <audio id="sound-F4" src="http://mikemp.mit.edu/piano/F4.ogg" preload="auto"></audio>
-    <audio id="sound-Gb4" src="http://mikemp.mit.edu/piano/Gb4.ogg" preload="auto"></audio>
-    <audio id="sound-G4" src="http://mikemp.mit.edu/piano/G4.ogg" preload="auto"></audio>
-    <audio id="sound-C5" src="http://mikemp.mit.edu/piano/C5.ogg" preload="auto"></audio>
+    <audio id="sound-A2" src="samples/A2.ogg" preload="auto"></audio>
+    <audio id="sound-Bb2" src="samples/Bb2.ogg" preload="auto"></audio>
+    <audio id="sound-B2" src="samples/B2.ogg" preload="auto"></audio>
+    <audio id="sound-Ab3" src="samples/Ab3.ogg" preload="auto"></audio>
+    <audio id="sound-A3" src="samples/A3.ogg" preload="auto"></audio>
+    <audio id="sound-Bb3" src="samples/Bb3.ogg" preload="auto"></audio>
+    <audio id="sound-B3" src="samples/B3.ogg" preload="auto"></audio>
+    <audio id="sound-C3" src="samples/C3.ogg" preload="auto"></audio>
+    <audio id="sound-Db3" src="samples/Db3.ogg" preload="auto"></audio>
+    <audio id="sound-D3" src="samples/D3.ogg" preload="auto"></audio>
+    <audio id="sound-Eb3" src="samples/Eb3.ogg" preload="auto"></audio>
+    <audio id="sound-E3" src="samples/E3.ogg" preload="auto"></audio>
+    <audio id="sound-F3" src="samples/F3.ogg" preload="auto"></audio>
+    <audio id="sound-Gb3" src="samples/Gb3.ogg" preload="auto"></audio>
+    <audio id="sound-G3" src="samples/G3.ogg" preload="auto"></audio>
+    <audio id="sound-Ab4" src="samples/Ab4.ogg" preload="auto"></audio>
+    <audio id="sound-A4" src="samples/A4.ogg" preload="auto"></audio>
+    <audio id="sound-Bb4" src="samples/Bb4.ogg" preload="auto"></audio>
+    <audio id="sound-B4" src="samples/B4.ogg" preload="auto"></audio>
+    <audio id="sound-C4" src="samples/C4.ogg" preload="auto"></audio>
+    <audio id="sound-Db4" src="samples/Db4.ogg" preload="auto"></audio>
+    <audio id="sound-D4" src="samples/D4.ogg" preload="auto"></audio>
+    <audio id="sound-Eb4" src="samples/Eb4.ogg" preload="auto"></audio>
+    <audio id="sound-E4" src="samples/E4.ogg" preload="auto"></audio>
+    <audio id="sound-F4" src="samples/F4.ogg" preload="auto"></audio>
+    <audio id="sound-Gb4" src="samples/Gb4.ogg" preload="auto"></audio>
+    <audio id="sound-G4" src="samples/G4.ogg" preload="auto"></audio>
+    <audio id="sound-C5" src="samples/C5.ogg" preload="auto"></audio>
     <div class="piano">
       <noscript class="piano-javascript">This program requires Javascript and HTML5 Audio support.</noscript>
       <div class="piano-container">
