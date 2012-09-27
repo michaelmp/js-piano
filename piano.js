@@ -17,7 +17,7 @@
 
 (function() {
 
-  /* Piano keyboard pitches. Names match sound files and CSS class. */
+  /* Piano keyboard pitches. Names match sound files by ID attribute. */
   
   var keys =[
     'A2', 'Bb2', 'B2', 'C3', 'Db3', 'D3', 'Eb3', 'E3', 'F3', 'Gb3', 'G3', 'Ab3',
