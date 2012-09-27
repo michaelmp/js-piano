@@ -48,7 +48,9 @@
     return it;
   };
 
-  /* Keyboard callback functions. */
+
+  /* Virtual piano keyboard events. */
+  
   function keyup(code) {
     var offset = codes.indexOf(code);
     var k;
@@ -60,8 +62,6 @@
   function keydown(code) {
     return keyup(code);
   };
-
-  /* Virtual piano keyboard event. */
   function press(key) {
     var audio = sound(key);
     if (depressed[key]) {
@@ -83,6 +83,7 @@
   };
 
   /* Manually diminish the volume when the key is not sustained. */
+  /* These values are hand-selected for a pleasant fade-out quality. */
   function fade(key) {
     var audio = sound(key);
     var stepfade = function() {
