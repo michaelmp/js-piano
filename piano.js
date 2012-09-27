@@ -18,6 +18,7 @@
 (function() {
 
   /* Piano keyboard pitches. Names match sound files. */
+  
   var keys =[
     'A2', 'Bb2', 'B2', 'C3', 'Db3', 'D3', 'Eb3', 'E3', 'F3', 'Gb3', 'G3', 'Ab3',
     'A3', 'Bb3', 'B3', 'C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'Gb4', 'G4', 'Ab4',
@@ -25,6 +26,7 @@
   ];
 
   /* Corresponding keyboard keycodes, in order. */
+  
   var codes = [
      90,   83,    88,   67,   70,    86,   71,    66,   78,   74,    77,   75,
      81,   50,    87,   69,   52,    82,   53,    84,   89,   55,    85,   56,
@@ -37,6 +39,7 @@
   var tonic = 'A2';
 
   /* Selectors */
+  
   function pianoClass(name) {
     return '.piano-' + name;
   };
@@ -84,6 +87,7 @@
 
   /* Manually diminish the volume when the key is not sustained. */
   /* These values are hand-selected for a pleasant fade-out quality. */
+  
   function fade(key) {
     var audio = sound(key);
     var stepfade = function() {
@@ -106,6 +110,7 @@
   };
 
   /* Bring a key to an immediate halt. */
+  
   function kill(key) {
     var audio = sound(key);
     return function() {
@@ -126,12 +131,15 @@
   };
 
   /* Simulate a gentle release, as opposed to hard stop. */
+  
   var fadeout = true;
 
   /* Sustain pedal, toggled by user. */
+  
   var sustaining = false;
 
   /* Register mouse event callbacks. */
+  
   keys.forEach(function(key) {
     $(pianoClass(key)).mousedown(function() {
       $(pianoClass(key)).animate({
@@ -157,6 +165,7 @@
   });
 
   /* Register keyboard event callbacks. */
+  
   $(document).keydown(function(event) {
     if (event.which === pedal) {
       sustaining = true;
