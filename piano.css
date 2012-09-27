@@ -42,7 +42,6 @@ audio {
 
 .piano-container {
   text-align: center;
-  font-weight: bold;
   background-color: #dca;
 }
 
@@ -52,10 +51,15 @@ audio {
   font-size: 0;
 }
 
-.piano-petal {
+.piano-pedal {
   border-radius: 5px;
-  background-color: #ac8;
   margin: 10px;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.piano-sustain {
+  background-color: rgba(1, 1, 1, 0.2);
+  color: black;
 }
 
 .piano-white, .piano-black {
