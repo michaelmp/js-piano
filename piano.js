@@ -49,14 +49,6 @@
   };
 
   /* Keyboard callback functions. */
-  function keypress(code) {
-    var offset = chars_press.indexOf(code);
-    var k;
-    if (offset >= 0) {
-      k = keys.indexOf(tonic) + offset;
-      return keys[k];
-    }
-  };
   function keyup(code) {
     var offset = codes.indexOf(code);
     var k;
