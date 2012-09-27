@@ -25,7 +25,10 @@
     'A4', 'Bb4', 'B4', 'C5'
   ];
 
-  /* Corresponding keyboard keycodes, in order. */
+  /* Corresponding keyboard keycodes, in order w/ 'keys'. */
+  /* QWERTY layout:
+  /*   upper register: Q -> P, with 1-0 as black keys. */
+  /*   lower register: Z -> M, , with A-L as black keys. */
   
   var codes = [
      90,   83,    88,   67,   70,    86,   71,    66,   78,   74,    77,   75,
