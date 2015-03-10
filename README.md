@@ -1,3 +1,8 @@
+
+
+Forked this project cause it's really cool and hoping to rebuild it using node.js and Angular.js
+
+
 js-piano
 ========
 
