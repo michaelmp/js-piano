@@ -101,3 +101,7 @@ audio {
   display: block;
   text-align: center;
 }
+
+#notes{
+  text-align: left;
+}

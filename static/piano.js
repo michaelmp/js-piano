@@ -35,6 +35,8 @@
     81, 50, 87, 69, 52, 82, 53, 84, 89, 55, 85, 56,
     73, 57, 79, 80
   ];
+  
+  var melodyCodes = [49, 50, 51, 52, 53, 54, 55, 56, 57, 48]
 
   var pedal = 32; /* Keycode for sustain pedal. */
   var tonic = 'A2'; /* Lowest pitch. */
@@ -180,7 +182,13 @@
       sustaining = true;
       $(pianoClass('pedal')).addClass('piano-sustain');
     }
-    press(keydown(event.which));
+    melodyKeyIndex = melodyCodes.indexOf(event.which)
+    if (melodyKeyIndex != -1 && melody) {
+      index = melodyKeyIndex - 1
+      note = melody[index]
+      sound = sound(note)
+      press(keydown(event.which));
+    } 
   });
 
   $(document).keyup(function (event) {
@@ -213,15 +221,34 @@
     key = "G3"
     type = "min"
     melody = generateMelody(key, type, 4)
-    playMelody(melody)
-    alert(melody)
+    playMelody(melody.slice())
+    printMelody(melody)
+    melody = melody
   });
 
+  printMelody = function (melody) {
+    text = melody.join(" ")
+    $("#notes").text("Notes: " + text)
+  };
+
   playMelody = function (melody) {
-    melody.forEach(note => {
-      offset = keys.indexOf(note)
-      playNote(note)
-    })
+    if (melody.length == 0) {
+      return
+    }
+    note = melody[0]
+    melody.shift()
+    var audio = sound(note)
+    audio.onended = function () {
+      playMelody(melody)
+    }
+    setTimeout(function () {
+      audio.play()
+      setTimeout(function () {
+        audio.pause();
+        audio.currentTime = 999999999;
+      }, 800);
+    }, 150)
+
   }
 
   generateMelody = function (key, type, length) {
@@ -234,14 +261,6 @@
     return melody
   }
 
-  playNote = function(key) {
-    var audio = sound(key)
-    audio.pause()
-    audio.loop = true
-    audio.play()
-    setTimeout(() => audio.pause(), 500)
-  }
-
   getKeyNotes = function (key, type) {
     scheme = []
     if (type === "maj") {
@@ -251,7 +270,7 @@
     }
     notes = getNotesByPattern(key, scheme)
     return notes
-  }
+  };
 
   getNotesByPattern = function (key, pattern) {
     index = keys.indexOf(key)
