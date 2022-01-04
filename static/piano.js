@@ -82,19 +82,25 @@
       return;
     }
     clearInterval(intervals[key]);
+    playAudio(audio)
+    if (audio.readyState >= 2) {
+      depressed[key] = true
+    }
+    $(pianoClass(key)).animate({
+      'backgroundColor': '#88FFAA'
+    }, 0);
+  };
+
+  function playAudio(audio) {
     if (audio) {
       audio.pause();
       audio.volume = 1.0;
       if (audio.readyState >= 2) {
         audio.currentTime = 0;
         audio.play();
-        depressed[key] = true;
       }
     }
-    $(pianoClass(key)).animate({
-      'backgroundColor': '#88FFAA'
-    }, 0);
-  };
+ };
 
   /* Manually diminish the volume when the key is not sustained. */
   /* These values are hand-selected for a pleasant fade-out quality. */
@@ -182,12 +188,10 @@
       sustaining = true;
       $(pianoClass('pedal')).addClass('piano-sustain');
     }
-    melodyKeyIndex = melodyCodes.indexOf(event.which)
-    if (melodyKeyIndex != -1 && melody) {
-      index = melodyKeyIndex - 1
+    index = melodyCodes.indexOf(event.which)
+    if (index != -1 && melody) {
       note = melody[index]
-      sound = sound(note)
-      press(keydown(event.which));
+      playMelody([note])
     } 
   });
 
@@ -223,7 +227,6 @@
     melody = generateMelody(key, type, 4)
     playMelody(melody.slice())
     printMelody(melody)
-    melody = melody
   });
 
   printMelody = function (melody) {
@@ -238,6 +241,10 @@
     note = melody[0]
     melody.shift()
     var audio = sound(note)
+    if (!audio) {
+      return
+    }
+    
     audio.onended = function () {
       playMelody(melody)
     }
