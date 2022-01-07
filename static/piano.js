@@ -25,6 +25,8 @@
     'A4', 'Bb4', 'B4', 'C5'
   ];
 
+  var notes = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+
   /* Corresponding keyboard keycodes, in order w/ 'keys'. */
   /* QWERTY layout:
   /*   upper register: Q -> P, with 1-0 as black keys. */
@@ -222,11 +224,58 @@
   });
 
   $("#new-melody-button").click(function () {
-    key = "G3"
-    type = "min"
-    melody = generateMelody(key, type, 4)
+    key = $("#keys option:selected").text()
+    if (key == "random") {
+      key = notes[getRandomNumber(11)] 
+    }
+
+    type = $("#scale option:selected").text()
+    if (type == "random") {
+      i = getRandomNumber(1)
+      if (i == 0) {
+        type = "min"
+      } else {
+        type = "maj"
+      }
+    }
+    melody = generateMelody(key + "3", type, 4)
+    if ($("#show-key").is(":checked")) {
+      printKey(key, type)
+    }
+    printMelody([])
     playMelody(melody.slice())
+  });
+
+  getRandomNumber = function(max) {
+    max = Math.floor(max);
+    return Math.floor(Math.random() * max)
+  };
+
+  $("#play-melody-button").click(function() {
+    if (!melody) {
+      return
+    }
+
+    playMelody(melody.slice())
+  });
+
+  $("#play-scale-button").click(function() {
+    if (!key || !type) {
+      return
+    }
+    scale = getKeyNotes(key, type)
+    // TODO we need to process notes here to add an 
+    // octave qualifier. Start with 3, switch to 2 when go over C
+    // (or start array from the beginning)
+    playMelody(scale)
+  });
+
+  $("#show-melody").click(function() {
+    if (!melody || !key) {
+      return
+    }
     printMelody(melody)
+    printKey(key, type)
   });
 
   printMelody = function (melody) {
@@ -234,19 +283,24 @@
     $("#notes").text("Notes: " + text)
   };
 
-  playMelody = function (melody) {
-    if (melody.length == 0) {
+  printKey = function(key, type) {
+    text = key + " " + type
+    $("#key").text("Key: " + text)
+  };
+
+  playMelody = function (m) {
+    if (m.length == 0) {
       return
     }
-    note = melody[0]
-    melody.shift()
+    note = m[0]
+    m.shift()
     var audio = sound(note)
     if (!audio) {
       return
     }
     
     audio.onended = function () {
-      playMelody(melody)
+      playMelody(m)
     }
     setTimeout(function () {
       audio.play()
@@ -259,13 +313,13 @@
   }
 
   generateMelody = function (key, type, length) {
-    notes = getKeyNotes(key, type)
+    melody_notes = getKeyNotes(key, type)
     positions = getRandomPositions(length - 1)
-    melody = [key]
+    m= [key]
     positions.forEach(pos => {
-      melody.push(notes[pos])
+      m.push(melody_notes[pos])
     })
-    return melody
+    return m
   }
 
   getKeyNotes = function (key, type) {
@@ -275,18 +329,17 @@
     } else if (type === "min") {
       scheme = [2, 1, 2, 2, 1, 2, 2]
     }
-    notes = getNotesByPattern(key, scheme)
-    return notes
+    return getNotesByPattern(key, scheme)
   };
 
   getNotesByPattern = function (key, pattern) {
     index = keys.indexOf(key)
-    notes = [key]
+    scale_notes = [key]
     pattern.forEach(step => {
       index = index + step
-      notes.push(keys[index])
+      scale_notes.push(keys[index])
     })
-    return notes
+    return scale_notes
   };
 
   getRandomPositions = function (count) {
@@ -302,4 +355,8 @@
     }
     return numbers
   };
+
+  notes.forEach(note => {
+    $('<option>').val(note).text(note).appendTo("#keys")
+  });
 })();

@@ -98,10 +98,16 @@ audio {
 }
 
 .trainer-container{
-  display: block;
-  text-align: center;
+  margin: auto;
+  width: 40%;
+  padding: 30px;
 }
 
-#notes{
+.trainer-container div {
   text-align: left;
+  margin: 20px;
+}
+
+.control button {
+  margin-right: 28px;
 }

@@ -93,18 +93,36 @@
         <div class="piano-white piano-B4"></div>
         <div class="piano-white piano-C5"></div>
       </div>
-      <div class="piano-pedal">Just listen to that sustain!</div>
     </div>
   </div>
   <div class="trainer">
     <div class="trainer-container">
-      <button id="new-melody-button">new melody</button>
-      <div id="notes">Notes:</div>
+      <div>
+        <select name="keys" id="keys">
+          <option value="random">random</option>
+        </select>
+        <select name="scale" id="scale">
+          <option value="random">random</option>
+          <option value="maj">maj</option>
+          <option value="min">min</option>
+        </select>
+        show key:<input type="checkbox" name="show-key" id="show-key">
+        <button id="new-melody-button">new melody</button>
+      </div>
+      <div class="control">
+        <button id="play-melody-button">play melody</button>
+        <button id="play-scale-button">play scale</button>
+        <button id="show-melody">show melody</button>
+        <div>
+        <div id="notes">Notes:</div>
+        <div id="key">Key:</div>
+        </div>
+      </div>
     </div>
   </div>
   <script src="piano.js"></script>
   <p style="text-align:center; font-size:smaller;">
-    <a href="https://github.com/michaelmp/js-piano">source code</a>
+    <a href="https://github.com/michaelmp/js-piano">original source code</a>
   </p>
 </body>
 
