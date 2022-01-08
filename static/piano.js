@@ -238,7 +238,9 @@
         type = "maj"
       }
     }
-    melody = generateMelody(key + "3", type, 4)
+
+    number = $("#number_of_notes option:selected").text()
+    melody = generateMelody(key + "3", type, Number.parseInt(number))
     if ($("#show-key").is(":checked")) {
       printKey(key, type)
     }
