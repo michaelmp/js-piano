@@ -263,10 +263,9 @@
     if (!key || !type) {
       return
     }
-    scale = getKeyNotes(key, type)
-    // TODO we need to process notes here to add an 
-    // octave qualifier. Start with 3, switch to 2 when go over C
-    // (or start array from the beginning)
+    // start with octave in the middle, not too high
+    scale = getKeyNotes(key + "3", type)
+  
     playMelody(scale)
   });
 
